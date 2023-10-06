@@ -1,8 +1,23 @@
+
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
 const cardsProductos = document.getElementById("cristales");
 
-
+function obtenerJSON() {
+    const URLJSON = '/productos.json';
+    fetch(URLJSON)
+        .then((result) => result.json())
+        .then((productos) => {
+            console.log(productos);
+            const cristalesCards = productos.cristales;
+        })
+        .catch((error) => console.log(error))
+}
+obtenerJSON();
+function agregarAlCarrito(productos) {
+    carrito.push(productos);
+    console.table(carrito);
+}
 function cristalesCards(lista) {
     for (const prod of lista) {
         cardsProductos.innerHTML += `
@@ -17,40 +32,23 @@ function cristalesCards(lista) {
                 </div>
             </div>
         `;
-    } 
+    }
 
     let botones = document.getElementsByClassName('compra');
     for (const boton of botones) {
         boton.addEventListener('click', () => {
             console.log('Hiciste click en el boton cuyo id es ' + boton.id);
-            const prodACarro = lista.find((productos) => productos.id == boton.id);
+            const prodACarro = lista.find((producto) => producto.id == boton.id);
             console.log(prodACarro);
             agregarAlCarrito(prodACarro);
         });
     }
-
-    function agregarAlCarrito(productos) {
-        carrito.push(productos);
-        console.table(carrito);
-    }
 }
-
 cristalesCards(productos);
 
 
 
-function obtenerJSON(){
-    const URLJSON='/productos.json';
-    fetch(URLJSON)
-        .then((result) => result.json())
-        .then((productos) => {
-            console.log(productos);
-            const cristalesCards = productos.cristales; 
-        })
-        .catch((e)=> console.log(e))
-}
 
-obtenerJSON();
 
 
 
