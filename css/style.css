@@ -8,9 +8,8 @@
 
 .titulo-header {
     display: flex;
-    padding-top: 5px;
+
     padding-left: 10px;
-   
     background-color: #eadae6;
     color: #254441;
     font-family: "Poppins";
@@ -25,7 +24,29 @@
    
 
 }
+#main-index{
+    align-content: center;
+    background-image: url("https://res.cloudinary.com/diklj3m6q/image/upload/v1696571294/fondo-index_ojuvzd.png");
+    height: 80vh;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    margin: 0;
 
+}  
+
+.contenido-index {
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    height: 38vh;
+    padding: 20px;
+}
 
 .footer {
     
