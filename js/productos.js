@@ -20,7 +20,7 @@ const productos = [{
     precio: 1000
 },
 
-{ id: 5,
+{ id: 4,
     foto: "https://cdn.pixabay.com/photo/2015/01/17/13/51/gem-602249_1280.jpg",
     nombre: "Calcita",
     descripcion: "Percepción, intuición, confianza en uno mismo. Útil cuando se ha perdido la esperanza.",
@@ -29,10 +29,10 @@ const productos = [{
 },
 
 {
-    id: 4,
+    id: 5,
     foto: "https://res.cloudinary.com/diklj3m6q/image/upload/v1696808773/fsd_q3sjtr.jpg",
     nombre: "Cornalina",
-    descripcion: "Energizante, aumenta la concentración. Purifica centros energéticos del corazón y también de los órganos sexuales.",
+    descripcion: "Energizante, aumenta la concentración. Purifica centros energéticos del corazón.",
     precio: 1000
 },
 {
@@ -43,7 +43,7 @@ const productos = [{
     precio: 1000
 },
 {
-    id: 7,
+    id: 8,
     foto: "https://cdn.pixabay.com/photo/2013/11/10/20/31/quartz-208505_1280.jpg",
     nombre: "Cuarzo Rosa",
     descripcion: "Conecta con uno mismo. Autoestima, autoamor. Sanar el corazón. Paz y armonía.",
