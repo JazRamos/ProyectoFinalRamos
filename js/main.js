@@ -37,7 +37,7 @@ function cristalesCards(lista) {
 
 cristalesCards(productos);
 
-//Luego de que se detecta el producto seleccionado con addEventListener, pop up avisando la acción realizada.
+//Luego de que se detecta el producto seleccionado con addEventListener, pop up avisando la acción realizada. Se va imprimiendo en consola una lista con los productos que se van seleccionando.
 function agregarAlCarrito(producto) {
     carrito.push(producto);
     console.table(carrito);
