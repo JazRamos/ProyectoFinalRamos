@@ -1,10 +1,8 @@
-console.table(productos);
+let carrito = JSON.parse(localStorage.getItem('productos')) || [];
 
-// let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-const carrito = [];
 const cardsProductos = document.getElementById("cristales");
-
-
+let boton = document.getElementsByClassName ("compraProducto");
+//Dom cards de productos
 function cristalesCards(lista) {
     for (const prod of lista) {
         cardsProductos.innerHTML += `
@@ -15,45 +13,53 @@ function cristalesCards(lista) {
                     <p class="card-text">
                     ${prod.descripcion} 
                     </p><p class="card-text fs-5 fw-semibold">$${prod.precio} </p>
-                    <button type=${prod.id} class="  btn btn-info bi bi-cart2 fw-semibold compraProducto"> Comprar</button>
+                    <button id=${prod.id} class="compraProducto btn btn-info bi bi-cart2 fw-semibold">Comprar</button>
+                    
                 </div>
             </div>
         `;
-    }
-    
-   
 
+    }
+//Evento boton de COMPRA, imprime en consola que producto es seleccionado 
     let botones = document.getElementsByClassName('compraProducto');
     for (const boton of botones) {
         boton.addEventListener('click', () => {
-            console.log('Hiciste click en el boton cuyo id es ' + boton.id);
-            const productoEnCarrito = lista.find((producto) => producto.id == boton.id);
+            console.log('Click id es ' + boton.id);
+            const productoEnCarrito = lista.find((productos) => productos.id == boton.id);
             console.log(productoEnCarrito);
-           
+            agregarAlCarrito(productoEnCarrito);
+
+            
         });
     }
+
 }
 
+cristalesCards(productos);
 
-    function agregarAlCarrito(producto) {
-        carrito.push(producto);
-        console.log(carrito);
-    }
+//Luego de que se detecta el producto seleccionado con addEventListener, pop up avisando la acción realizada.
+function agregarAlCarrito(producto) {
+    carrito.push(producto);
+    console.table(carrito);
+    Swal.fire({
+        title: '¡Agregaste un producto a tu carrito!',
+        text: "Agregaste + ${producto.id}",
+        icon: 'success',
+        confirmButtonText: '¡Genial!'
+    })
+}
 
-
-
-function obtenerJSON(){
-    const URLJSON='/productos.json';
+//Se trae el JSON de productos con fetch, lo imprime por consola. Si por alguna razón no lo encuentra, imprime el error por alert.
+function obtenerJSON() {
+    const URLJSON = '/productos.json';
     fetch(URLJSON)
         .then((result) => result.json())
         .then((productos) => {
             console.log(productos);
-            const cristalesCards = productos.cristales; 
         })
-        .catch((e)=> console.log(e))
+        .catch((error) => alert(error))
 }
 
-cristalesCards(productos);
 obtenerJSON();
 
 

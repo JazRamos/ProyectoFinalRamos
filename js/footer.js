@@ -1,3 +1,4 @@
+//DOM footer global 
 const crearFooter = () => {
     let nav = document.getElementById("footerNav")
     nav.innerHTML = `

@@ -1,4 +1,4 @@
-//DOM barra de navegación para todo
+//DOM barra de navegación global
 const crearNav = () => {
     let nav = document.getElementById("barraNav")
     nav.innerHTML = `

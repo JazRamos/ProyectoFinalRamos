@@ -19,11 +19,41 @@ const productos = [{
     descripcion: "Facilita la autoexpresión. Alivia la pena emocional. Disipa miedo e inseguridad.",
     precio: 1000
 },
+
+{ id: 5,
+    foto: "https://cdn.pixabay.com/photo/2015/01/17/13/51/gem-602249_1280.jpg",
+    nombre: "Calcita",
+    descripcion: "Percepción, intuición, confianza en uno mismo. Útil cuando se ha perdido la esperanza.",
+    precio: 1000
+    
+},
+
 {
     id: 4,
-    foto: "https://cdn.pixabay.com/photo/2018/03/05/19/49/citrine-3201605_1280.jpg",
-    nombre: "Citrino",
-    descripcion: "Autoestima. Poder personal. Planes y objetivos. Confianza en uno mismo.",
+    foto: "https://res.cloudinary.com/diklj3m6q/image/upload/v1696808773/fsd_q3sjtr.jpg",
+    nombre: "Cornalina",
+    descripcion: "Energizante, aumenta la concentración. Purifica centros energéticos del corazón y también de los órganos sexuales.",
+    precio: 1000
+},
+{
+    id: 6,
+    foto: "https://res.cloudinary.com/diklj3m6q/image/upload/v1696808773/DGsg_d7ouqb.jpg",
+    nombre: "Cuarzo Ahumado",
+    descripcion: "Poder ver el sentido de tus acciones. Estar presente en la tierra, conectado con nosotros mismos.",
+    precio: 1000
+},
+{
+    id: 7,
+    foto: "https://cdn.pixabay.com/photo/2013/11/10/20/31/quartz-208505_1280.jpg",
+    nombre: "Cuarzo Rosa",
+    descripcion: "Conecta con uno mismo. Autoestima, autoamor. Sanar el corazón. Paz y armonía.",
+    precio: 1000
+},
+{
+    id: 8,
+    foto: "https://cdn.pixabay.com/photo/2014/02/15/16/46/gem-266715_1280.jpg",
+    nombre: "Labradorita",
+    descripcion: "Ver una situación de distintas perspectivas. Despertar la intuición para discernir. Es mágica.",
     precio: 1000
 }
 
