@@ -33,22 +33,25 @@ function cristalesCards(lista) {
         });
     }
 
+    //Luego de que se detecta el producto seleccionado con addEventListener, pop up avisando la acción realizada. Se va imprimiendo en consola una lista con los productos que se van seleccionando.
+    function agregarAlCarrito(producto) {
+        carrito.push(producto);
+        console.table(carrito);    
+        Swal.fire({
+            title: '¡Agregaste un producto a tu carrito!',
+            text: "Agregaste " + producto.nombre,
+            icon: 'success',
+            confirmButtonText: '¡Genial!'
+        })
+    }
+
 }
+
+
+
+
 
 cristalesCards(productos);
-
-//Luego de que se detecta el producto seleccionado con addEventListener, pop up avisando la acción realizada. Se va imprimiendo en consola una lista con los productos que se van seleccionando.
-function agregarAlCarrito(producto) {
-    carrito.push(producto);
-    console.table(carrito);
-    Swal.fire({
-        title: '¡Agregaste un producto a tu carrito!',
-        text: "Agregaste + ${producto.id}",
-        icon: 'success',
-        confirmButtonText: '¡Genial!'
-    })
-}
-
 //Se trae el JSON de productos con fetch, lo imprime por consola. Si por alguna razón no lo encuentra, imprime el error por alert.
 function obtenerJSON() {
     const URLJSON = '/productos.json';
