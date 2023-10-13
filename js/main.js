@@ -1,8 +1,10 @@
 let carrito = JSON.parse(localStorage.getItem('productos')) || [];
-
 const cardsProductos = document.getElementById("cristales");
 let boton = document.getElementsByClassName ("compraProducto");
 //Dom cards de productos
+
+
+
 function cristalesCards(lista) {
     for (const prod of lista) {
         cardsProductos.innerHTML += `
@@ -24,7 +26,6 @@ function cristalesCards(lista) {
     let botones = document.getElementsByClassName('compraProducto');
     for (const boton of botones) {
         boton.addEventListener('click', () => {
-            console.log('Click id es ' + boton.id);
             const productoEnCarrito = lista.find((productos) => productos.id == boton.id);
             console.log(productoEnCarrito);
             agregarAlCarrito(productoEnCarrito);
@@ -37,12 +38,26 @@ function cristalesCards(lista) {
     function agregarAlCarrito(producto) {
         carrito.push(producto);
         console.table(carrito);    
-        Swal.fire({
+        Toastify({
+            text: "Agregaste " + producto.nombre + " a tu carrito!",
+            duration: 3000,
+            destination: "https://github.com/apvarun/toastify-js",
+            newWindow: true,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "left", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "linear-gradient(to right, #00b09b, #96c93d)",
+            }
+            // onClick: function(){} // Callback after click
+          }).showToast();
+       /*  Swal.fire({
             title: '¡Agregaste un producto a tu carrito!',
             text: "Agregaste " + producto.nombre,
             icon: 'success',
             confirmButtonText: '¡Genial!'
-        })
+        }) */
     }
 
 }
@@ -53,7 +68,7 @@ function cristalesCards(lista) {
 
 cristalesCards(productos);
 //Se trae el JSON de productos con fetch, lo imprime por consola. Si por alguna razón no lo encuentra, imprime el error por alert.
-function obtenerJSON() {
+ function obtenerJSON() {
     const URLJSON = '/productos.json';
     fetch(URLJSON)
         .then((result) => result.json())
@@ -61,7 +76,7 @@ function obtenerJSON() {
             console.log(productos);
         })
         .catch((error) => alert(error))
-}
+} 
 
 obtenerJSON();
 
