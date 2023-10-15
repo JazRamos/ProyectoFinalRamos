@@ -13,7 +13,6 @@ function cristalesCards(lista) {
                     ${prod.descripcion} 
                     </p><p class="card-text fs-5 fw-semibold">$${prod.precio} </p>
                     <button id=${prod.id} class="compraProducto btn btn-info bi bi-cart2 fw-semibold">Comprar</button>
-                    
                 </div>
             </div>
         `;
@@ -23,17 +22,14 @@ function cristalesCards(lista) {
     let botones = document.getElementsByClassName('compraProducto');
     for (const boton of botones) {
         boton.addEventListener('click', () => {
-            console.log('Click id es ' + boton.id);
             const productoEnCarrito = lista.find((productos) => productos.id == boton.id);
-            console.log(productoEnCarrito);
-            agregarAlCarrito(productoEnCarrito);
-
+            devolverCompra(productoEnCarrito);
             
         });
     }
 
     //Luego de que se detecta el producto seleccionado con addEventListener, pop up avisando la acción realizada. Se va imprimiendo en consola una lista con los productos que se van seleccionando.
-    function agregarAlCarrito(producto) {
+    function devolverCompra(producto) {
         carrito.push(producto);
         console.table(carrito);    
         Toastify({
@@ -42,9 +38,9 @@ function cristalesCards(lista) {
             destination: "https://github.com/apvarun/toastify-js",
             newWindow: true,
             close: true,
-            gravity: "top", // `top` or `bottom`
-            position: "left", // `left`, `center` or `right`
-            stopOnFocus: true, // Prevents dismissing of toast on hover
+            gravity: "top", 
+            position: "left", 
+            stopOnFocus: true,
             style: {
               background: "linear-gradient(to right, #00b09b, #809BCE)",
             }
@@ -60,6 +56,7 @@ function obtenerJSON() {
         .then((result) => result.json())
         .then((productos) => {
             console.log(productos);
+            
         })
         .catch((error) => alert(error))
 }
