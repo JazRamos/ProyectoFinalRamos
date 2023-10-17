@@ -6,9 +6,16 @@
     padding: 0;
 }
 
+
+.btnCarrito {
+  
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+}
 .titulo-header {
     display: flex;
-
     padding-left: 10px;
     background-color: #eadae6;
     color: #254441;
