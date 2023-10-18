@@ -9,5 +9,5 @@ btnAbrirCarro.addEventListener('click', () => {
 
 closeBtn.addEventListener('click', () => {
     preventDefault();
-    offcanvasCuerpo.offcanvas;
+    offcanvasCuerpo;
 });
