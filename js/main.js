@@ -52,13 +52,13 @@ function cristalesCards(lista) {
             <h5 class="mb-1">${producto.nombre}</h5> </div>
             <p class="precioCarro mb-1">$ ${producto.precio}</p>
             <p class="cantidadCarro mb-1">1 </p></a>
-            <button class= "btnRemover btn btn-danger">Borrar</button>
+            <button class= "btnRemover btn btn-danger btn-sm">Borrar</button>
     </div> 
  
   `;
   const subTotal = carrito.reduce((acumulador, prod) => acumulador + prod.precio, 0);
   console.log('Total a pagar $' + subTotal);
-  document.getElementsByClassName('carroTotal').innerHTML = 'Total a pagar $:' + subTotal;
+  document.getElementsByClassName('carroTotal').innerHTML = 'Total $:' + subTotal;
   
         Toastify({
             text: "Agregaste " + producto.nombre + " a tu carrito!",
