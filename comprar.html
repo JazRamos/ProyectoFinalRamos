@@ -19,18 +19,18 @@
     <nav id="barraNav"></nav>
     </nav>
     <button class="btnCarrito btn bi bi-cart2" type="button" data-bs-toggle="offcanvas"
-      data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"></button>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasWithBothOptionsLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Tu Carrito</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-
-      </div>
+    data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"></button>
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample"
+    aria-labelledby="offcanvasWithBothOptionsLabel">
+    <div class="offcanvas-header" id="offcanvasHead">
     </div>
+    <div class="offcanvas-body" id="offcanvasCuerpo"></div>
+    <p class="carroTotal"></p>
+  </div>
+
   </header>
   <main>
+  
     <p class="texto-main container-fluid fs-5 fw-medium justify-content-center ">
       Los minerales son una gran herramienta utilizada en las terapias holísticas.
       ¡Llevate la que más te atraiga!
@@ -47,7 +47,7 @@
     crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="./js/carrito.js"></script>
+  <script src="./js/offcanvas-carrito.js"></script>
   <script src="./js/footer.js"></script>
   <script src="./js/navbar.js"></script>
   <script src="./js/productos.js"></script>

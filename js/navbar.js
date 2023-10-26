@@ -8,10 +8,7 @@ const crearNav = () => {
          alt="cristales-logo" width="50" height="50"></a>
  <div class="navbar-nav nav-underline me-auto mb-2 mb-lg-0 ">
      <a class="nav-link " href="./index.html">Inicio</a>
-     <a class="nav-link" href="./comprar.html">Tienda</a>
-    
-    
-     
+     <a class="nav-link" href="./comprar.html">Tienda</a> 
  </div>
 </nav>
 `;
